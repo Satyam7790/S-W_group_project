@@ -1,69 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toy Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ToyWorld — Premium (Dark)</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+  <!-- NAVBAR (same in all pages) -->
   <nav>
     <div class="logo">ToyWorld</div>
     <ul>
-      <li>Home</li>
-      <li>Categories</li>
-      <li>Contact</li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="boys_section/boys.html">Boys</a></li>
+      <li><a href="girls_section/girls.html">Girls</a></li>
+      <li><a href="cart.html">Cart 🛒 <span id="cart-count">0</span></a></li>
     </ul>
   </nav>
 
-  <section class="hero">
-    <div class="floating">🧸</div>
-    <div class="floating2">🎈</div>
-    <div class="floating3">🚗</div>
-    <h1>Discover Joy Through Play</h1>
-    <p>Top toys loved by kids and trusted by parents.</p>
-  </section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Premium toys. Curated play.</h1>
+      <p class="hero-sub">Discover adventure-ready toys, handpicked for every age. Fast shipping • Secure checkout</p>
 
-  <section class="section reveal">
-    <a href="boys_section/boys.html">
-    <div class="big-card">
-      <img src="media/boys_logo.jpg" alt="">
-      👦 Popular Among Boys</div></a>
-    <a href="girls_section/girls.html">
-      <div class="big-card">👧 Popular Among Girls</div></a>
-  </section>
+      <div class="ctas">
+        <a class="btn btn-accent" href="boys_section/boys.html">Shop Boys</a>
+        <a class="btn btn-ghost" href="girls_section/girls.html">Shop Girls</a>
+      </div>
 
-  <section class="age-select">
-    <h2>Select by Age</h2>
-    <div class="age-scroll">
-      <div class="age-card">🐣 Below 1</div>
-      <div class="age-card">🍼 1</div>
-      <div class="age-card">🎵 2</div>
-      <div class="age-card">🧩 3</div>
-      <div class="age-card">🎨 4 - 5</div>
-      <div class="age-card">🤖 6 - 8</div>
-      <div class="age-card">🚀 8 - 13</div>
-      <div class="age-card">⭐ 13+</div>
+      <div class="hero-features">
+        <div class="hf">
+          <strong>Quality first</strong>
+          <p>Premium tested products</p>
+        </div>
+        <div class="hf">
+          <strong>Fast shipping</strong>
+          <p>Next-day options</p>
+        </div>
+        <div class="hf">
+          <strong>Secure pay</strong>
+          <p>Trusted checkout</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-card">
+        <div class="badge">New</div>
+        <img src="media/hero.png" alt="Featured toy">
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURED & NEW ARRIVALS -->
+  <section class="featured">
+    <h2>Featured picks</h2>
+    <div class="grid" id="home-featured">
+      <a class="fp card" href="boys_section/boys.html">
+        <div class="fp-img"></div>
+        <div class="fp-body"><strong>Adventure Figures</strong><span>Action & play</span></div>
+      </a>
+      <a class="fp card" href="girls_section/girls.html">
+        <div class="fp-img"></div>
+        <div class="fp-body"><strong>Creative Sets</strong><span>STEM & crafts</span></div>
+      </a>
+      <a class="fp card" href="boys_section/boys.html">
+        <div class="fp-img"></div>
+        <div class="fp-body"><strong>RC & Vehicles</strong><span>High speed</span></div>
+      </a>
     </div>
   </section>
 
-  <section class="section reveal">
-    <div class="big-card">🔥 Hot Releases</div>
-    <div class="big-card">🌟 Popular Among Kids</div>
-  </section>
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  function revealOnScroll(){
-    for(let r of reveals){
-      const rect = r.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50){
-        r.classList.add('visible');
-      }
-    }
-  }
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-</script>
+  <footer class="site-footer">
+    <p>© ToyWorld — premium toys, playful hearts.</p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,176 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Action & Adventure Toys</title>
-    <link rel="stylesheet" href="boys.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Action & Adventure — Boys</title>
+  <link rel="stylesheet" href="boys.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <h1>Action & Adventure Toys</h1>
-            <p class="text-xl opacity-90">
-                Explore the hottest figures, vehicles, and building sets for epic play!
-            </p>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">ToyWorld</div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="boys.html">Boys</a></li>
+      <li><a href="../girls_section/girls.html">Girls</a></li>
+      <li><a href="../cart.html">Cart 🛒 <span id="cart-count">0</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="layout">
+    <aside class="filter-panel" aria-label="Filters">
+      <h3>Filters</h3>
+
+      <label>Category</label>
+      <select id="filter-category">
+        <option value="all">All</option>
+        <option>Action Figures</option>
+        <option>Vehicles</option>
+        <option>Building Blocks</option>
+        <option>Board Games</option>
+        <option>STEM</option>
+      </select>
+
+      <label>Age</label>
+      <select id="filter-age">
+        <option value="all">All Ages</option>
+        <option value="5-7">5 - 7</option>
+        <option value="8-10">8 - 10</option>
+        <option value="10+">10+</option>
+      </select>
+
+      <label>Price</label>
+      <select id="filter-price">
+        <option value="all">All</option>
+        <option value="0-30">Under $30</option>
+        <option value="30-70">$30 - $70</option>
+        <option value="70-9999">$70+</option>
+      </select>
+
+      <label>Badge</label>
+      <select id="filter-badge">
+        <option value="all">All</option>
+        <option value="HOT">HOT</option>
+        <option value="NEW">NEW</option>
+        <option value="SALE">SALE</option>
+        <option value="EXCLUSIVE">EXCLUSIVE</option>
+      </select>
+
+      <div class="filter-actions">
+        <button id="applyFilters" class="apply-btn">Apply</button>
+        <button id="resetFilters" class="reset-btn">Reset</button>
+      </div>
+
+      <!-- Loader (default CSS spinner). To use GIF: replace <span class="loader default"> with
+           <img class="loader" src="../media/your-loader.gif" alt="loading"> -->
+      <div id="boys-loader" class="loader-wrap" style="display:none; margin-top:12px;">
+        <span class="loader default" aria-hidden="true"></span>
+      </div>
+    </aside>
+
+    <section id="product-list" class="products-grid">
+      <!-- static cards (edit directly). data-* attributes used by filters -->
+      <article class="product-card" data-id="1" data-category="Action Figures" data-age="8-10" data-price="19.99" data-badge="HOT">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/00e6ff?text=Galaxy+Warrior" alt="Galaxy Warrior"></div>
+        <div class="card-body">
+          <h3>Galaxy Warrior Figure</h3>
+          <p class="desc">From the new Cosmos Saga line.</p>
+          <div class="meta"><div class="price">$19.99</div><button class="add-to-cart" data-id="1">Add</button></div>
         </div>
-    </header>
+      </article>
 
-    <nav class="main-nav" aria-label="Main Navigation">
-        <div class="container">
-            <ul class="nav-list">
-                <li>
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link active-link" aria-current="page">Popular for Boys</a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link girls-link">Popular for Girls</a>
-                </li>
-            </ul>
+      <article class="product-card" data-id="2" data-category="Vehicles" data-age="10+" data-price="45.00" data-badge="NEW">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/7cf0ff?text=Turbo+RC" alt="Turbo RC"></div>
+        <div class="card-body">
+          <h3>Turbo RC Race Car</h3>
+          <p class="desc">High-speed remote controlled fun.</p>
+          <div class="meta"><div class="price">$45.00</div><button class="add-to-cart" data-id="2">Add</button></div>
         </div>
-    </nav>
+      </article>
 
-    <main class="container content-layout">
-        
-        <aside class="filter-sidebar" aria-label="Product Filters">
-            <h2>Filter Toys</h2>
-            
-            <div class="filter-group">
-                <h3>Category</h3>
-                <div class="space-y-2">
-                    <label>
-                        <input type="checkbox">
-                        <span class="ml-2">Action Figures</span>
-                    </label>
-                    <label>
-                        <input type="checkbox">
-                        <span class="ml-2">Vehicles & RC</span>
-                    </label>
-                    <label>
-                        <input type="checkbox">
-                        <span class="ml-2">Building Blocks</span>
-                    </label>
-                </div>
-            </div>
+      <article class="product-card" data-id="3" data-category="Building Blocks" data-age="8-10" data-price="89.99" data-badge="EXCLUSIVE">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/9ff0ff?text=Space+Command" alt="Space Command"></div>
+        <div class="card-body">
+          <h3>Space Command Set</h3>
+          <p class="desc">1,500 pieces for the ultimate build.</p>
+          <div class="meta"><div class="price">$89.99</div><button class="add-to-cart" data-id="3">Add</button></div>
+        </div>
+      </article>
 
-            <div class="filter-group">
-                <h3>Age Range</h3>
-                <select>
-                    <option>All Ages</option>
-                    <option>5 - 7 Years</option>
-                    <option>8 - 10 Years</option>
-                    <option>10+ Years</option>
-                </select>
-            </div>
-            
-            <button class="filter-button">
-                Apply Filters
-            </button>
-        </aside>
+      <article class="product-card" data-id="4" data-category="Vehicles" data-age="10+" data-price="69.50" data-badge="">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/00b2ff?text=Explorer+Drone" alt="Explorer Drone"></div>
+        <div class="card-body">
+          <h3>Explorer Drone</h3>
+          <p class="desc">Easy-to-fly with camera feature.</p>
+          <div class="meta"><div class="price">$69.50</div><button class="add-to-cart" data-id="4">Add</button></div>
+        </div>
+      </article>
 
-        <section class="product-grid">
+      <article class="product-card" data-id="5" data-category="Board Games" data-age="5-7" data-price="35.00" data-badge="SALE">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/ffb86b?text=Medieval+Siege" alt="Medieval Siege"></div>
+        <div class="card-body">
+          <h3>Medieval Siege Game</h3>
+          <p class="desc">2-4 player strategy board game.</p>
+          <div class="meta"><div class="price">$35.00</div><button class="add-to-cart" data-id="5">Add</button></div>
+        </div>
+      </article>
 
-            <div class="product-card">
-                <div class="product-tag exclusive-badge">🔥 HOT ITEM</div>
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=Action Figure" alt="Galaxy Warrior Figure" class="toy-card-img">
-                </div>
-                
-                <h3>Galaxy Warrior Figure</h3>
-                <p class="product-description">From the new Cosmos Saga line.</p>
-                
-                <p class="product-price">$19.99</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Galaxy Warrior Figure to cart">
-                    Add to Cart
-                </button>
-            </div>
+      <article class="product-card" data-id="6" data-category="STEM" data-age="5-7" data-price="24.99" data-badge="">
+        <div class="card-media"><img src="https://placehold.co/420x300/0f1724/ffd6ff?text=Volcano+Kit" alt="Volcano Kit"></div>
+        <div class="card-body">
+          <h3>Volcano Science Kit</h3>
+          <p class="desc">Exciting experiment for young scientists.</p>
+          <div class="meta"><div class="price">$24.99</div><button class="add-to-cart" data-id="6">Add</button></div>
+        </div>
+      </article>
+    </section>
+  </main>
 
-            <div class="product-card">
-                <div class="product-tag new-badge">NEW</div>
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=RC Car" alt="Turbo RC Race Car" class="toy-card-img">
-                </div>
-                
-                <h3>Turbo RC Race Car</h3>
-                <p class="product-description">High-speed, remote-controlled fun.</p>
-                
-                <p class="product-price">$45.00</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Turbo RC Race Car to cart">
-                    Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                <div class="product-tag exclusive-badge">⭐ EXCLUSIVE</div>
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=Building Set" alt="Space Command Set" class="toy-card-img">
-                </div>
-                
-                <h3>Space Command Set</h3>
-                <p class="product-description">1,500 pieces for the ultimate build.</p>
-                
-                <p class="product-price">$89.99</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Space Command Set to cart">
-                    Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=Drone" alt="Explorer Drone" class="toy-card-img">
-                </div>
-                
-                <h3>Explorer Drone</h3>
-                <p class="product-description">Easy-to-fly with camera function.</p>
-                
-                <p class="product-price">$69.50</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Explorer Drone to cart">
-                    Add to Cart
-                </button>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-tag exclusive-badge">SALE!</div>
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=Board Game" alt="Medieval Siege Game" class="toy-card-img">
-                </div>
-                
-                <h3>Medieval Siege Game</h3>
-                <p class="product-description">2-4 player strategy board game.</p>
-                
-                <p class="product-price">$35.00</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Medieval Siege Game to cart">
-                    Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                
-                <div class="toy-card-img-container">
-                    <img src="https://placehold.co/200x200/e5e7eb/4a4a4a?text=Science Kit" alt="Volcano Science Kit" class="toy-card-img">
-                </div>
-                
-                <h3>Volcano Science Kit</h3>
-                <p class="product-description">Exciting experiment for young scientists.</p>
-                
-                <p class="product-price">$24.99</p>
-                
-                <button class="add-to-cart-btn" aria-label="Add Volcano Science Kit to cart">
-                    Add to Cart
-                </button>
-            </div>
-        </section>
-    </main>
-
-    
+  <script src="../script.js"></script>
+  <script src="boys.js"></script>
 </body>
 </html>
